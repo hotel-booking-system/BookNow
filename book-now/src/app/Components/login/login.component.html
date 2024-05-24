@@ -1,0 +1,66 @@
+<div class="wrapper">
+    <div class="container-fluid main">
+        <div class="row">
+            <div class="col-md-6 col-xs-12 custom-left">
+                <div class="text">
+                    <div class="info">
+                        <div class="container-fluid">
+                            <a class="navbar-brand" href="#">
+                              <img src="../assets/simbolo.png" alt="Logo" width="40" height="43"  class="d-inline-block align-text-top">
+                              Hotel Booking
+                            </a>
+                          </div>
+                       <p>O lugar onde hóspedes e 
+                       hotéis se encontram.
+                       <p id="inform"> Simples, fácil e conveniente.</p>
+                       </div>
+                 
+                </div>
+            </div>
+
+            <div class="col-md-6 col-xs-12 custom-right">
+                <form (ngSubmit)="loginForm.valid && validateUser(loginForm)"
+                 #loginForm="ngForm" class="form-container" >
+                    <header>Seja bem-vindo!</header>
+                    
+                    <div class="form-group" data-validate="Por favor, insira o e-mail!">
+                        <input class="form-control" id="email" type="email" name="email" required
+                        pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                        [(ngModel)]="user.email" #email="ngModel"
+                        aria-label="Endereço de e-mail" >
+                        <label for="email">Email</label>
+                    </div>
+
+                    <span class="text-danger" *ngIf="(email.touched || loginForm.submitted) && email.errors?.['required']">
+                        Erro: O email é obrigatório!
+                      </span>
+                      <span class="text-danger" *ngIf="(email.touched || loginForm.submitted) && email.errors?.['pattern']">
+                        Erro: Forneça um endereço de e-mail válido!
+                      </span>
+
+                    <div class="form-group">
+                         <input class="form-control" id="password" type="password" name="password"
+                             required minlength="8"
+                            [(ngModel)]="user.password" #password="ngModel"
+                            aria-label="Senha" >
+                        <label for="password">Senha</label>
+                    </div>
+                    <span class="text-danger" *ngIf="(password.touched || loginForm.submitted) && password.errors?.['required']">
+                        Erro: A senha é obrigatória!
+                      </span>
+                      <span class="text-danger" *ngIf="(password.touched || loginForm.submitted) &&  password.errors?.['minlength']">
+                        Erro: A senha deve ter pelo menos 8 caracteres!
+                      </span>
+
+                    <button type="submit" class="submit">
+                        Entrar
+                    </button>
+                    <div class="singin">
+                        <span>Esqueceu sua conta? <a href="#">Acesse aqui</a></span>
+                    </div>
+              
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

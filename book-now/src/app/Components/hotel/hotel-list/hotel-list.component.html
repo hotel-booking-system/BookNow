@@ -1,0 +1,79 @@
+<div class="hotel-list-container">
+    <button class="btn btn-primary mb-3" (click)="addNewHotel()" aria-label="Adicionar novo Hotel">Adicionar Novo Hotel</button>
+   
+    <div class="card">
+      <div class="row no-gutters">
+        <div class="col-md-3">
+          <img src="./assets/chale.jpeg" class="card-img" alt="Imagem do Hotel">
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <p id="titulo" class="card-title text-right"><span id="titulo" class="highlight">Hospedagem:</span> Buscar no banco de dados</p>
+            <p class="card-text text-right"><span class="highlight">Localização:</span></p>
+            <p class="card-text text-right"><span class="highlight">Diária:</span></p>
+            <p class="card-text text-right"><span class="highlight">Avaliação:</span></p>
+            <div class="button-ref">            
+              <button id="edit" class="btn btn-primary mb-3" >Editar</button>
+              <button id="remove" class="btn btn-primary mb-3" >Remover</button>
+           </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    
+      
+    <div class="row">
+      <div class="col-md-4" *ngFor="let hotel of hotels">
+        <div class="card mb-4">
+          <div class="card-body">
+            <h5 class="card-title">{{ hotel.name }}</h5>
+            <p class="card-text">Localização: {{ hotel.location }}</p>
+            <p class="card-text">Preço: {{ hotel.price }}</p>
+            <p class="card-text">Avaliação: {{ hotel.rating }}</p>
+            <div class="btn-group">
+              <button class="btn btn-sm btn-info" data-bs-toggle="modal"
+                      data-bs-target="#hotelDetailsModal"
+                      [attr.data-hotel-id]="hotel.id"
+                      (click)="openDetailsModal(hotel.id)">Detalhes</button>
+              <button class="btn btn-sm btn-warning" aria-label="Editar Hotel"
+                      [attr.data-hotel-id]="hotel.id"
+                      (click)="editHotel(hotel.id, hotel)">Editar</button>
+              <button type="button" class="btn btn-sm btn-danger" aria-label="Excluir Hotel"
+                      (click)="deleteHotel(hotel.id)">Excluir</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+ 
+    
+  
+    <!-- Card para visualizar detalhes    -->
+
+    <div class="modal fade" id="hotelDetailsModal" tabindex="-1" aria-labelledby="hotelDetailsModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="hotelDetailsModalLabel">Detalhes do Hotel</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p *ngIf="selectedHotel">
+              <strong>Nome:</strong> {{ selectedHotel.name }}<br>
+              <strong>Localização:</strong> {{ selectedHotel.location }}<br>
+              <strong>Diária:</strong> {{ selectedHotel.price }}<br>
+              <strong>Avaliação:</strong> {{ selectedHotel.rating }}
+            </p>
+            <p *ngIf="!selectedHotel">Carregando detalhes...</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  
