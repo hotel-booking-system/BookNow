@@ -7,6 +7,7 @@ import { UserProfileComponent } from './Components/users/user-profile/user-profi
 import { UserRegisterComponent } from './Components/users/user-register/user-register.component';
 import { UserSettingsComponent } from './Components/users/user-settings/user-settings.component';
 
+
 export const routes: Routes = [
   {
     path: '',
