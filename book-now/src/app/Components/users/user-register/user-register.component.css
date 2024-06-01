@@ -72,7 +72,10 @@
     outline: none;
     margin-bottom: 20px;
   }
-
+  .input-field input:focus {
+    outline: none !important;
+    box-shadow: none !important;
+  }
   .form-control:focus {
     outline: none; /* Remove a borda ao clicar */
 }

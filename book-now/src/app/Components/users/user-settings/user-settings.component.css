@@ -1,0 +1,79 @@
+.settings-container {
+    padding: 20px;
+  }
+  .settings-container p {
+    color: #f07d14;
+    font-size: 32px;
+    font-weight: 500;
+  }
+  
+  .form-container p{
+    font-size: 22px;
+    color: #f07d14;
+    font-weight: 400;
+  }
+  
+  .form-group{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding: 0 10px 0 10px;
+  }
+  
+  .form-control{
+    height: 45px;
+    width: 48%; 
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #f07d14;
+    outline: none;
+    margin-bottom: 20px;
+  }
+  .form-control:focus {
+    outline: none !important;
+    box-shadow: none !important;
+  }
+  
+  form .form-group label{
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  pointer-events: none;
+  transition: .5s;
+  }
+  
+  .form-group .form-control:focus ~ label{
+  top: -10px;
+  font-size: 13px;
+  }
+  .form-group .form-control:valid ~ label{
+  top: -10px;
+  font-size: 13px;
+  color: #f07d14;
+  }
+  
+  .form-group .form-control:focus, .form-group .form-control:valid{
+  border-bottom: 1px solid #f07d14;
+  }
+  .btn {
+    background-color: #f07d14;
+    border: none;
+    width: 48%; /* Adjust width as needed for your design */
+    margin-bottom: 10px; /* For spacing between elements on larger screens */
+  }
+  
+  .btn.btn-primary:focus,
+  .btn.btn-primary:active {
+  background-color: #f07d14;
+  border-color: #f07d14; 
+  
+  }
+  
+  
+  @media only screen and (max-width: 768px) {
+    .form-control,
+    .btn {
+      width: 100%; /* Make elements full width on smaller screens */
+    }
+  }
+  

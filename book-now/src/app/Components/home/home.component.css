@@ -1,53 +1,55 @@
+.search-input{
+  display: flex;
+  align-items: center; /* Alinha verticalmente */
+  justify-content: center; /* Alinha horizontalmente */
+  margin-top: 50px;
+}
+
 .input-group{
   width: 500px;
-   position: absolute;
-   left: 50%;
-   top: 25%;
-   transform: translate(-50%,-50%);
    background-color: white; /*f07d14*/
    border: 2px solid #f07d14;
    height: 40px;
    border-radius: 16px;
-
+   display: flex;
    justify-content: space-between;
- 
+   align-items: center;
 }
+/*CSS dos filtros a */
 
 .filters-button{
-  position: absolute;
-  left: 50%;
-  top: 30%;
-  transform: translate(-50%,-50%);
+  display: flex;
+  align-items: center; /* Alinha verticalmente */
+  justify-content: center; /* Alinha horizontalmente */
+  margin-top: 20px;
+  
 }
 .filter-btn {
-  display: inline-block;
-  padding: 10px 20px;
-  text-decoration: none;
-  color: #333;
-  font-weight: bold;
-  transition: 0.3s;
   position: relative;
-  top: 30px;
+  display: inline-block;
 }
-.filter-btn::after {
-  content: '';
+
+.filter-btn .icon-text {
+  position: relative;
+  z-index: 1;
+}
+
+.filter-btn fa-icon {
   position: absolute;
-  width: 0;
-  height: 2px;
-  background-color: #007bff;
-  bottom: 0;
-  left: 0;
-  transition: 0.3s;
-}
-.filter-btn:hover::after {
-  width: 100%;
+  top: -20px; /* Ajuste a posição vertical conforme necessário */
+  left: 50%;
+  transform: translateX(-50%);
+  color: #756c6c; /* Cor desejada para o ícone */
+  z-index: 0;
 }
 
+
+/* 
 .container-cards{
-  background-color: #fffaf4;
+  background-color: #fff3e6;
 }
 
-
+*/
 .form-control:focus {
    outline: none;
    box-shadow: none;
