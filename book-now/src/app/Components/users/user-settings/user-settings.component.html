@@ -1,33 +1,26 @@
 
 <div class="settings-container">
-    <h2>Configurações do Usuário</h2>
+    <p>Configurações do Usuário</p>
     <form (ngSubmit)="settingsForm()" #userSettings="ngForm" class="form-container">
+      <p>Alterar senha</p>
       <div class="form-group">
-        <label for="email">Email</label>
-        <input type="email" id="email" formControlName="email" class="form-control" aria-label="Email address">
-      </div>
+          <input class="form-control" id="email" type="email" name="email" formControlName="email" aria-label="Email address">
+          <label for="email">Email</label>
+        </div>
   
       <div class="form-group">
+        <input class="form-control" id="password" type="password" name="password" formControlName="password" aria-label="Current password">
         <label for="password">Senha atual</label>
-        <input type="password" id="password" formControlName="password" class="form-control" aria-label="Current password">
       </div>
   
       <div class="form-group">
+        
+        <input class="form-control" id="newPassword" type="password" name="newPassword" formControlName="newPassword" aria-label="New password">
         <label for="newPassword">Nova senha</label>
-        <input type="password" id="newPassword" formControlName="newPassword" class="form-control" aria-label="New password">
       </div>
   
-      <div class="form-group">
-        <label for="photo">Foto</label>
-        <input type="file" id="photo" (change)="uploadPhoto($event)" class="form-control-file" aria-label="Upload profile picture">
-      </div>
-  
-      <div class="form-group">
+        <div class="form-group">
         <button type="button" class="btn btn-primary" (click)="changePassword()">Alterar Senha</button>
-      </div>
-  
-      <div class="form-group">
-        <button type="button" class="btn btn-primary" (click)="updatePersonalData()">Atualizar Dados Pessoais</button>
       </div>
     </form>
   </div>
