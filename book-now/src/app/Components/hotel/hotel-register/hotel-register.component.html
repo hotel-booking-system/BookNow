@@ -1,1 +1,70 @@
-<p>hotel-register works!</p>
+<div class="wrapper">
+    <div class="container-fluid main">
+        <div class="row">
+            <div class="col-md-6 col-xs-12 custom-left">
+                <div class="text">
+                    <div class="info">
+                        <div class="container-fluid">
+                            <a class="navbar-brand" href="#">
+                              <img src="../assets/simbolo.png" alt="Logo" width="40" height="43"  class="d-inline-block align-text-top">
+                              Hotel Booking
+                            </a>
+                          </div>
+                       <p>O lugar onde hóspedes e 
+                       hotéis se encontram.
+                       <p id="inform"> Simples, fácil e conveniente.</p>
+                       </div>
+                 
+                </div>
+            </div>
+
+            <div class="col-md-6 col-xs-12 custom-right">
+                <div class="input-box">
+                    <header>Crie sua conta</header>
+
+                    <form  (ngSubmit)="registerHotel()" #hotelForm="ngForm" class="form-container">
+                    
+                        <div class="input-field  ">
+                        <input type="text" class="form-control" id="title"
+                        required minlength="3" [(ngModel)]="hotel.title" name="title"
+                        #title="ngModel" />
+                        <label for="title">Nome da acomodação</label>
+                    </div>
+
+                    <div class="input-field">
+                        <input type="text" class="form-control" id="email"
+                        required [(ngModel)]="hotel.description " name="description "
+                        #description ="ngModel" />
+                        <label for="description ">Descrição</label>
+                    </div>
+
+                    <div class="input-field">
+                    <input type="text" class="form-control" id="location"
+                        required [(ngModel)]="hotel.location" name="location"
+                        #location="ngModel" /> 
+                            <label for="location">Localização</label>
+                    </div>
+
+                    <div class="input-field">
+                        <input type="text" class="form-control" id="price"
+                            required [(ngModel)]="hotel.price" name="price"
+                            #price="ngModel" /> 
+                                <label for="price">Preço por noite</label>
+                    </div>
+
+                    <div class="input-field">
+                        <label for="images">Imagens</label>
+                        <input type="file" accept="image/*" (change)="onFileChange($event)" multiple />
+                      
+                      </div>
+
+                    <div class="input-field">
+                        <input type="submit" class="submit" value="Cadastrar" [disabled]="!hotelForm.form.valid">
+                    </div>
+                    
+                  </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
