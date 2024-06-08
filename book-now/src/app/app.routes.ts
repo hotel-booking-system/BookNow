@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
 
 import { HomeComponent } from './Components/home/home.component';
+import { HotelRegisterComponent } from './Components/hotel/hotel-register/hotel-register.component';
 import { LoginComponent } from './Components/login/login.component';
 import { ChangePasswordComponent } from './Components/users/change-password/change-password.component';
 import { UserProfileComponent } from './Components/users/user-profile/user-profile.component';
@@ -26,6 +27,8 @@ export const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'user-settings', component: UserSettingsComponent },
   { path: 'change-password', component: ChangePasswordComponent },
+  { path: 'hotel-register', component: HotelRegisterComponent },
+
 
 
 ];
